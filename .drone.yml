@@ -15,9 +15,7 @@ pipeline:
 
   docker-latest:
     image: plugins/docker
-    repo: quay.io/uswitch/aws-sigv4-proxy
-    registry: quay.io
-    secrets: [ docker_username, docker_password ]
+    repo: registry.usw.co/aws-sigv4-proxy
     tags:
       - latest
       - ${DRONE_COMMIT_SHA}
@@ -27,9 +25,7 @@ pipeline:
 
   docker-tagged:
     image: plugins/docker
-    repo: quay.io/uswitch/aws-sigv4-proxy
-    registry: quay.io
-    secrets: [ docker_username, docker_password ]
+    repo: registry.usw.co/aws-sigv4-proxy
     auto_tag: true
     when:
       event: tag
