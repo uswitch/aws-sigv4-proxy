@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PROXY_BIN="/go/bin/aws-sigv4-proxy"
+PROXY_BIN="/aws-sigv4-proxy"
 FATE=${FATE:-"standlone"}
 FATE_MOUNT=${FATE_MOUNT:-"/tmp/fate"}
 FATE_FILE=${FATE_FILE:-"${FATE_MOUNT}/main-terminated"}
