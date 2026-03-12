@@ -12,6 +12,7 @@ COPY . .
 RUN CGO_ENABLED=0 go build -o /bin/aws-sigv4-proxy .
 
 FROM alpine:3.23
+RUN apk add --no-cache 'zlib>=1.3.2-r0'
 
 COPY --from=build /etc/ssl/certs/ca-bundle.crt /etc/ssl/certs/
 COPY --from=build /bin/aws-sigv4-proxy /aws-sigv4-proxy
